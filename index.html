@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titik Temu — Keputusan Bersama</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+
+<!-- HALAMAN 1: LOGIN / DAFTAR -->
+<section id="auth-page" class="page auth-page">
+  <div class="auth-top"><div class="brand"><span class="brand-mark">t.</span><span>TITIK TEMU</span></div><span class="auth-top-note">Ruang untuk menemukan keputusan bersama.</span></div>
+  <div class="auth-wrap">
+    <div class="auth-visual">
+      <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+      <div class="visual-copy"><span class="eyebrow light">BETTER TOGETHER</span><h1>Setiap suara punya tempat.</h1><p>Diskusikan pilihan, pahami kebutuhan, dan temukan keputusan yang lebih adil bersama-sama.</p></div>
+      <div class="visual-mini-card"><div class="mini-avatars"><i>A</i><i>B</i><i>C</i><i>+</i></div><div><b>Keputusan bersama</b><small>Dimulai dari mendengar.</small></div><span class="spark">✦</span></div>
+      <div class="visual-shape shape-a"></div><div class="visual-shape shape-b"></div>
+    </div>
+    <div class="auth-panel">
+      <div class="mobile-brand brand"><span class="brand-mark">t.</span><span>TITIK TEMU</span></div>
+      <div class="auth-heading"><span class="eyebrow">SELAMAT DATANG</span><h2 id="auth-title">Masuk ke Titik Temu</h2><p id="auth-desc">Lanjutkan proses pengambilan keputusan bersama.</p></div>
+      <div class="auth-switch"><button class="auth-tab active" id="login-tab">Masuk</button><button class="auth-tab" id="signup-tab">Buat akun</button></div>
+      <form id="auth-form">
+        <label>Nama pengguna</label><input id="auth-username" placeholder="Masukkan nama pengguna" required>
+        <div id="email-field" class="hidden"><label>Email</label><input id="auth-email" type="email" placeholder="nama@email.com"></div>
+        <label>Kata sandi</label><input id="auth-password" type="password" placeholder="Masukkan kata sandi" required>
+        <button class="primary-btn full" id="auth-submit" type="submit">Masuk <span>→</span></button>
+      </form>
+      <p class="auth-demo">Prototype demo · isi nama dan kata sandi apa saja.</p>
+    </div>
+  </div>
+  <div class="auth-footer">© 2026 TITIK TEMU <span>•</span> SISTEM PENDUKUNG KEPUTUSAN KELOMPOK</div>
+</section>
+
+<!-- APLIKASI -->
+<div id="app-page" class="page app-page hidden">
+  <aside class="sidebar">
+    <div class="brand side-brand"><span class="brand-mark">t.</span><span>TITIK TEMU</span></div>
+    <div class="workspace-label">WORKSPACE</div>
+    <button class="side-link active" data-section="home"><span class="side-ico">⌂</span> Beranda</button>
+    <button class="side-link" data-section="myrooms"><span class="side-ico">▤</span> Ruang saya <span class="side-count" id="side-room-count">3</span></button>
+    <button class="side-link" data-section="activity"><span class="side-ico">◷</span> Aktivitas</button>
+    <div class="side-divider"></div>
+    <div class="workspace-label">LAINNYA</div>
+    <button class="side-link" data-section="guide"><span class="side-ico">ⓘ</span> Panduan</button>
+    <div class="sidebar-bottom">
+      <div class="user-profile"><div class="user-avatar" id="side-avatar">A</div><div class="user-info"><b id="side-user">Alya</b><small>Pengguna</small></div><button class="profile-more" id="profile-more">···</button></div>
+      <button class="logout-btn" id="logout-btn">↪ Keluar</button>
+    </div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar">
+      <div class="mobile-brand brand"><span class="brand-mark">t.</span><span>TITIK TEMU</span></div>
+      <div class="breadcrumb" id="breadcrumb">Beranda <span>/</span> Ringkasan</div>
+      <div class="top-actions"><button class="help-btn" data-section="guide">? <span>Bantuan</span></button><div class="top-divider"></div><div class="top-user"><span class="online-dot"></span><span id="top-user">Alya</span><div class="user-avatar small" id="top-avatar">A</div></div></div>
+    </header>
+
+    <!-- HALAMAN 2: DASHBOARD UMUM -->
+    <section id="dashboard" class="content-page">
+      <div class="welcome-line"><div><div class="eyebrow">DASHBOARD PENGGUNA</div><h1>Selamat datang, <span id="welcome-user">Alya</span>! <span class="wave">✦</span></h1><p class="muted">Siap menemukan keputusan terbaik bersama?</p></div><div class="today-chip">◷ <span id="today-date">Hari ini</span></div></div>
+      <div class="hero-actions">
+        <div class="hero-card create-card"><div class="hero-decoration">＋</div><div class="hero-text"><span class="eyebrow light">MULAI DARI SINI</span><h2>Buat ruang keputusan</h2><p>Jadilah fasilitator dan mulai diskusi baru bersama kelompokmu.</p><button class="white-btn" id="create-room-btn">＋ Buat ruang <span>→</span></button></div><div class="hero-illustration"><div class="ill-circle c1"></div><div class="ill-circle c2"></div><div class="ill-card"><span>✦</span><b>IDEA</b><small>Let's decide</small></div><div class="ill-dot d1"></div><div class="ill-dot d2"></div></div></div>
+        <div class="hero-card join-card"><div class="join-icon">⌁</div><span class="eyebrow">PUNYA UNDANGAN?</span><h2>Gabung ke ruang</h2><p>Masukkan PIN yang diberikan fasilitator untuk bergabung.</p><button class="outline-btn" id="join-room-btn">Masukkan PIN <span>→</span></button><div class="join-decoration">•••</div></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-symbol lavender">▤</div><div><small>Total ruang</small><b id="total-rooms">3</b></div><span class="stat-caption">Ruang kamu</span></div>
+        <div class="stat-box"><div class="stat-symbol mint">◷</div><div><small>Sedang berlangsung</small><b id="active-rooms">2</b></div><span class="stat-caption">Masih terbuka</span></div>
+        <div class="stat-box"><div class="stat-symbol peach">✓</div><div><small>Sudah selesai</small><b id="closed-rooms">1</b></div><span class="stat-caption">Keputusan ditutup</span></div>
+      </div>
+      <div class="section-heading"><div><h2>Ruang terbaru</h2><p>Lanjutkan ruang keputusan yang sedang kamu ikuti.</p></div><button class="text-btn" id="see-all-rooms">Lihat semua ruang <span>→</span></button></div>
+      <div class="room-list" id="room-list"></div>
+      <div class="bottom-tip"><div class="tip-star">✦</div><div><b>Semua orang bisa menjadi fasilitator.</b><p>Siapa pun dapat membuat ruang keputusan. Saat membuat ruang, kamu otomatis menjadi fasilitator di ruang tersebut.</p></div><button class="tip-close" id="tip-close">×</button></div>
+    </section>
+
+    <section id="other-section" class="content-page hidden">
+      <div class="page-heading"><div class="eyebrow">WORKSPACE</div><h1 id="other-title">Ruang saya</h1><p class="muted" id="other-desc">Semua ruang keputusan yang kamu buat atau ikuti.</p></div>
+      <div id="other-content"></div>
+    </section>
+
+    <!-- HALAMAN 3: RUANG DISKUSI -->
+    <section id="room-page" class="content-page hidden">
+      <button class="back-btn" id="back-home">← Kembali ke beranda</button>
+      <div class="room-banner">
+        <div class="room-banner-main"><div class="room-kicker"><span class="room-category">RUANG KEPUTUSAN</span><span class="status-pill open" id="room-status">OPEN</span></div><h1 id="room-name">Pemilihan tempat kegiatan</h1><p id="room-description">Diskusikan pilihan terbaik bersama anggota kelompok.</p></div>
+        <div class="room-banner-actions"><button class="soft-btn" id="invite-btn">♧ Undang anggota</button><button class="more-btn" id="room-more">···</button></div>
+        <div class="room-banner-meta"><span>♧ <b id="room-member-total">5 anggota</b></span><span>◷ Dibuat oleh <b id="room-creator">Alya</b></span><span>⌁ PIN <b id="room-pin-label">482 915</b></span></div>
+      </div>
+      <div class="room-tabs"><button class="room-tab active" data-tab="discussion">◉ Diskusi</button><button class="room-tab" data-tab="details">▤ Detail ruang</button><button class="room-tab" data-tab="people">♧ Anggota <span id="people-count">5</span></button></div>
+      <div id="discussion-panel" class="room-panel">
+        <div class="discussion-layout">
+          <div class="chat-card">
+            <div class="chat-card-head"><div><h3>Ruang diskusi</h3><p>Obrolkan ide dan pertimbangan bersama anggota.</p></div><span class="live-status"><i></i> Diskusi aktif</span></div>
+            <div class="chat-messages" id="chat-messages">
+              <div class="chat-date"><span>Hari ini</span></div>
+              <div class="chat-message"><div class="chat-avatar av-blue">B</div><div class="chat-content"><div class="chat-author">Bima <small>10.24</small></div><div class="chat-bubble">Menurutku kita perlu mempertimbangkan akses transportasi juga, bukan cuma harga.</div></div></div>
+              <div class="chat-message own"><div class="chat-content"><div class="chat-author">Alya <small>10.26</small></div><div class="chat-bubble">Setuju. Biar semua anggota bisa menjangkau lokasinya dengan mudah.</div></div><div class="chat-avatar av-purple">A</div></div>
+              <div class="chat-message"><div class="chat-avatar av-peach">C</div><div class="chat-content"><div class="chat-author">Citra <small>10.29</small></div><div class="chat-bubble">Aku sudah memasukkan jarak maksimal 500 meter sebagai syarat wajibku.</div></div></div>
+            </div>
+            <form id="chat-form" class="chat-composer"><button type="button" class="attach-btn">＋</button><input id="chat-input" placeholder="Tulis pesan untuk semua anggota..." autocomplete="off"><button class="send-btn" type="submit">➤</button></form>
+            <div class="chat-footnote">Pesan diskusi tidak mengubah skor preferensi atau syarat wajib anggota.</div>
+          </div>
+          <aside class="room-aside">
+            <div class="aside-section"><div class="aside-title"><b>Anggota ruang</b><button class="tiny-link" data-tab-jump="people">Lihat semua</button></div><div id="aside-members" class="aside-members"></div></div>
+            <div class="aside-section summary-section"><div class="aside-title"><b>Informasi ruang</b></div><div class="info-row"><span>Status</span><b id="aside-status">Open</b></div><div class="info-row"><span>Peran kamu</span><b id="aside-role">Fasilitator</b></div><div class="info-row"><span>Jumlah anggota</span><b id="aside-total">5 orang</b></div></div>
+            <div class="pin-card"><small>PIN UNTUK BERGABUNG</small><strong id="aside-pin">482 915</strong><button id="copy-pin-btn">Salin PIN <span>▢</span></button></div>
+          </aside>
+        </div>
+      </div>
+      <div id="details-panel" class="room-panel hidden"><div class="detail-card"><span class="eyebrow">INFORMASI</span><h2 id="detail-name">Pemilihan tempat kegiatan</h2><p id="detail-desc">Diskusikan pilihan terbaik bersama anggota kelompok.</p><div class="detail-grid"><div><small>Fasilitator</small><b id="detail-creator">Alya</b></div><div><small>Status ruang</small><b id="detail-status">Open</b></div><div><small>PIN ruang</small><b id="detail-pin">482 915</b></div><div><small>Jumlah anggota</small><b id="detail-total">5 orang</b></div></div></div></div>
+      <div id="people-panel" class="room-panel hidden"><div class="detail-card"><span class="eyebrow">PARTISIPAN</span><h2>Anggota ruang</h2><p>Orang-orang yang tergabung dalam ruang keputusan ini.</p><div id="full-members" class="full-members"></div></div></div>
+      <div id="facilitator-bar" class="facilitator-bar hidden"><div><b>Kontrol fasilitator</b><small>Atur tahapan ruang keputusan.</small></div><button class="primary-btn" id="status-action">Mulai evaluasi</button></div>
+    </section>
+  </main>
+</div>
+
+<div id="modal-overlay" class="modal-overlay hidden"><div class="modal-box"><button class="modal-close" id="modal-close">×</button><div id="modal-body"></div></div></div>
+<script src="script.js"></script>
+</body></html>
